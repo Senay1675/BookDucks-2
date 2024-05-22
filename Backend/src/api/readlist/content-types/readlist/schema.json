@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "readlists",
+  "info": {
+    "singularName": "readlist",
+    "pluralName": "readlists",
+    "displayName": "readlist",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "readlist": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "readlist"
+    },
+    "books": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::book.book"
+    }
+  }
+}
